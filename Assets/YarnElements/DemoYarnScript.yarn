@@ -1,0 +1,98 @@
+﻿title: DemoYarnScript
+tags:
+---
+
+===
+
+title: DemoStart
+tag:
+---
+
+<<declare $everUsedYarn=false>>
+<<declare $monthsOfUsage=0>>
+
+
+Welcome to this Yarn Demo. #line:05d1d2a 
+
+You are about to learn how to implement Yarn in your Unity Project. #line:0a81d0b 
+
+Do you already know about Yarn Spinner? #line:0d611b4 
+
+-> Yes, I know all about it, you can tell me nothing!! #line:066f746
+    <<set $everUsedYarn=true>>
+    <<jump KnowItAll>>
+
+-> I know a little, but not really... #line:0ab6a3b 
+    <<set $everUsedYarn=true>>
+    <<jump KnowsALittle>>
+
+-> I know nothing, please tell me more! #line:0492f9d 
+    <<set $everUsedYarn=false>>
+    <<jump KnowsNothing>>
+===
+
+title: KnowItAll
+tag: 
+---  
+
+Well, good for you - what a genius you must be!! #line:02b9f83 
+
+How long have you used Yarn for? #line:0e826c1 
+
+-> Only 6 months #line:03a6ea8 
+    <<set $monthsOfUsage=6>>
+    <<jump DemoOutro>> 
+
+-> About a year #line:0b68a94 
+    <<set $monthsOfUsage=12>>
+    <<jump DemoOutro>> 
+ 
+
+-> At least 2 years #line:0bf3735 
+    <<set $monthsOfUsage=24>>
+    <<jump DemoOutro>> 
+===
+
+title: KnowsALittle
+tag:
+---
+
+That is great news, good to hear you have learnt a bit. #line:0a691aa
+
+How long have you used Yarn for? #line:018ed6b 
+
+-> Only 6 months #line:0a037f2 
+    <<set $monthsOfUsage=6>>
+    <<jump DemoOutro>> 
+
+-> About a year #line:016a549 
+    <<set $monthsOfUsage=12>>
+    <<jump DemoOutro>> 
+===
+
+title:KnowsNothing
+tag:
+---
+
+Have no fear! We can get you rolling!! #line:05fced4 
+    <<jump DemoOutro>> 
+
+===
+
+title: DemoOutro
+tag:
+---
+
+<<if $everUsedYarn==false>>
+Go to the next stage for some training! #line:0a1b23c 
+<<else>>
+
+<<if $monthsOfUsage<=12>>
+Sounds like you still have some things to learn, we can help with that!! Head to the next stage for training. #line:072e67f 
+<<elseif $monthsOfUsage>=12>>
+Seems as though you know everything, you must be awesome!! #line:044c5d5 
+<<endif>>
+<<endif>>
+
+
+===
