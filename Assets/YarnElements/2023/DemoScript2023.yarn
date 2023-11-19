@@ -1,0 +1,54 @@
+﻿title: Awake
+---
+
+<<declare $startedScene = true as bool>>
+<<declare $cubeToChange = "" as string>>
+<<declare $colourOfCube = "" as string>>
+<<declare $numberOfNPCs = 0>>
+
+
+title: Start #line:0d62d63 
+tags: #line:02062cf 
+--- #line:0c86829 
+
+This is the start of the demo script. #line:0838f37 
+
+This is the second line of the script. #line:03ccefd 
+
+===
+
+
+title:NPCCube1
+---
+
+Hello, I am NPC Cube 1, how do you do? #line:NPCCube1_line1
+
+What colour should I be? #line:0b5bf33 
+
+-> Blue? #line:01a5d6a
+    <<set $cubeToChange to "1">>
+    <<set $colourOfCube to "Blue">>
+-> Red? #line:08022d4 
+    <<set $cubeToChange to "1">>
+    <<set $colourOfCube to "Red">>
+-> Orange? #line:0211862 
+    <<set $cubeToChange to "1">>
+    <<set $colourOfCube to "Orange">>
+
+<<change_cube_colour YarnCommands>>
+
+Awesome, I love that colour, thanks!
+
+===
+
+
+title:NPCCube2
+---
+
+What do you want? I'm NPC Cube 2 and I don't like strangers!!! #line:NPCCube2_line1
+
+-> Nothing
+
+
+
+===

@@ -18,7 +18,7 @@ public class NPC3D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogueCanvas = GameObject.Find("Dialogue Canvas"); //this is bad way to do this but hey we doing this quickly
+        dialogueCanvas = GameObject.FindGameObjectWithTag("Dialogue Canvas"); //this is bad way to do this but hey we doing this quickly
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>(); //this is bad way to do this but hey we doing this quickly
 
 
@@ -76,6 +76,11 @@ public class NPC3D : MonoBehaviour
                 dialogueRunner.StartDialogue(talkToNode);
             }
         }
+    }
+    
+    void Update()
+    {
+        
     }
 
 }
